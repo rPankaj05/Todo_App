@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+ 
+ <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>To-Do List</h1>
+  <form action="/add" method="post" class="task-form ">
+    <input type="text" name="description" placeholder="Enter a new task" required>
+    <button type="submit" class="add-task-button">Add Task</button>
+  </form>
+  
+  <% if (tasks.length === 0) { %>
+    <p id="no_task">No tasks in the task list.</p>
+  <% } else { %>
+    <table>
+      <tr>
+        <th>S No.</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+      <% tasks.forEach((task, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td class="task-description<%= task.completed ? ' completed' : '' %>"><%= task.description %></td>
+          <td class="task-actions">
+            <form class="actions-form" action="/status" method="post">
+              <input type="hidden" name="taskId" value="<%= task._id %>">
+              <input type="checkbox" name="completed" <% if (task.completed) { %>checked<% } %>>
+              <button class="update-button" type="submit">Update</button>
+            </form>
+            <form class="actions-form" action="/delete" method="post">
+              <input type="hidden" name="taskId" value="<%= task._id %>">
+              <button class="delete-button" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </table>
+  <% } %>
+</body>
+</html>

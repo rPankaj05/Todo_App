@@ -1,0 +1,98 @@
+
+body {
+font-family: Arial, sans-serif;
+background-color: #94d2f3;
+margin: 0;
+padding: 0;
+}
+#no_task{
+  display: flex;
+  justify-content: center;
+  font-size: 29px;
+}
+h1 {
+text-align: center;
+margin-top: 20px;
+color: #333;
+}
+
+form {
+text-align: center;
+margin-bottom: 10px;
+}
+.add-task-button {
+background-color: #333;
+color: #fff;
+border: none;
+padding: 8px 16px;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.task-form {
+display: flex;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+.task-form input[type="text"] {
+padding: 8px;
+width: 38%;
+border: 1px solid #97cce9;
+border-radius: 5px;
+}
+
+.task-form button {
+background-color: #333;
+color: #fff;
+border: none;
+padding: 8px 16px;
+margin-left: 10px;
+cursor: pointer;
+}
+
+table {
+margin: 20px auto;
+border-collapse: collapse;
+width: 80%;
+max-width: 600px;
+background-color: #fff;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+th {
+background-color: #333;
+color: #fff;
+padding: 12px;
+text-align: left;
+}
+
+td {
+padding: 12px;
+text-align: left;
+}
+
+.task-description.completed {
+text-decoration: line-through;
+color: #999;
+}
+
+.actions-form {
+display: inline-block;
+}
+
+.update-button {
+background-color: green;
+color: #fff;
+border: none;
+padding: 8px 16px;
+cursor: pointer;
+}
+
+.delete-button {
+background-color: red;
+color: #fff;
+border: none;
+padding: 8px 16px;
+cursor: pointer;
+}
