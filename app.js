@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config()
 
 const app = express();
 
@@ -16,9 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(static_path));
 
 
-// Connect to MongoDB Atlas
+//Connect to MongoDB Atlas
+
 mongoose
-  .connect('mongodb+srv://rPankaj05:Pankaj12345@cluster1.h5hfurj.mongodb.net/?retryWrites=true&w=majority', {
+  .connect(process.env.MONGO_DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
