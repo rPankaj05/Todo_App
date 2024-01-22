@@ -82,6 +82,7 @@ display: inline-block;
 }
 
 .update-button {
+border-radius: 5px;
 background-color: green;
 color: #fff;
 border: none;
@@ -90,6 +91,7 @@ cursor: pointer;
 }
 
 .delete-button {
+  border-radius: 5px;
 background-color: red;
 color: #fff;
 border: none;
